@@ -15,6 +15,11 @@ const typeDefs = gql`
     goodDeedAuthor: String
     createdAt: String
   }
+  
+  type Auth {
+    token: ID!
+    user: User
+  }
 
   type Query {
     users: [User]
@@ -24,10 +29,12 @@ const typeDefs = gql`
 
   type Mutation {
     addUser (username: String!, email: String!, password: String!): Auth
-    login (email: String!, password: String!): Auth
+    login (username: String!, password: String!): Auth
     addGoodDeed (goodDeedText: String!): GoodDeed
     removeGoodDeed (goodDeedId: ID!): GoodDeed
   }
 `;
+
+
 
 module.exports = typeDefs;
