@@ -1,6 +1,6 @@
 const { AuthenticationErro, AuthenticationError } = require('apollo-server-express');
 const { User, GoodDeed } = require('../models');
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -38,9 +38,9 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect username or password'); 
             }
 
-            // const token = signToken(user);
+            const token = signToken(user);
 
-            // return { token, user };
+            return { token, user };
         },
         addGoodDeed: async (parent, { goodDeedText }, context) => {
             if (context.user) {
