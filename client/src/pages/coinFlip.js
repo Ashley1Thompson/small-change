@@ -59,7 +59,15 @@ class Coin extends React.Component {
         console.error(err);
       }
     };
-
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+    
+        if (name === 'thoughtText' && value.length <= 280) {
+          setThoughtText(value);
+          setCharacterCount(value.length);
+        }
+      };
 
     return (
       <div className="Coin">
@@ -85,7 +93,7 @@ class Coin extends React.Component {
                     placeholder="What good deed did you accomplish today?"
                     value={goodDeedText}
                     className=''
-                    // onChange=
+                    onChange={handleChange}
                     ></textarea>
                 </div> 
 
