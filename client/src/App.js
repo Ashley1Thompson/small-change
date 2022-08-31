@@ -11,10 +11,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //import pages and components
 import CoinFlip from './pages/CoinFlip';
-import Inspiration from './pages/Inspiration';
+// import Inspiration from './pages/Inspiration';
 import Login from './pages/Login';
 import UserProfile from './pages/UserProfile';
-import Header from './components/Header';
+import Header from './components/Header'
 import Footer from './components/Footer';
 
 //import styling
@@ -49,7 +49,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="">
-          <Header />
+          {/* <Header /> */}
           <div className="">
             <Routes>
               <Route
@@ -66,7 +66,7 @@ function App() {
               />
             </Routes>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>
