@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CoinFlip from './pages/CoinFlip';
 // import Inspiration from './pages/Inspiration';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import UserProfile from './pages/UserProfile';
 import Header from './components/Header'
 import Footer from './components/Footer';
@@ -56,6 +57,10 @@ function App() {
               <Route
                 path="/"
                 element={<Login />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
               />
               {/* <Route
                 path="/coinflip"
