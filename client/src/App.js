@@ -17,6 +17,8 @@ import Header from './components/Header'
 import Footer from './components/Footer';
 
 //import styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 
 // Construct our main GraphQL API endpoint
@@ -55,10 +57,10 @@ function App() {
                 path="/"
                 element={<Login />}
               />
-              <Route
+              {/* <Route
                 path="/coinflip"
                 element={<CoinFlip />}
-              />  
+              />   */}
               <Route
                 path="/profile"
                 element={<UserProfile />}

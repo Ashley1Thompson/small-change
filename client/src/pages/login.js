@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { login } from "../utils/mutations";
+import { LOGIN } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(login);
+  const [login, { error, data }] = useMutation(LOGIN);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -18,6 +18,7 @@ const Login = (props) => {
     });
   };
 
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -42,12 +43,14 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
+            {/* code that delivers message to user if they are loggged in and find themselves on the login page */}
             {data ? (
               <p>
                 Login successful, proceed to {""}
                 <Link to="/">the homepage.</Link>
               </p>
             ) : (
+              // login form
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
@@ -70,12 +73,20 @@ const Login = (props) => {
                 </button>
               </form>
             )}
-
-            {error && (
+            {/* {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}
               </div>
-            )}
+            )} */}
+
+            {/* signup link that takes you to signup page */}
+            <div>
+            <p>
+                Need to sign up? {""}
+                <Link to="/signup">click here!</Link>
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
