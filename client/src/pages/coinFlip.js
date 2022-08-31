@@ -1,6 +1,11 @@
-import React from "react";
-import { useMutation } from "@apollo/client";
-import { ADD_GOOD_DEED } from "../utils/mutations";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+
+import { ADD_GOOD_DEED } from '../utils/mutations';
+import {QUERY_GOOD_DEEDS, QUERY_ME} from '../utils/queries';
+
+import Auth from '../utils/auth';
 
 class Coin extends React.Component {
   constructor(props) {
@@ -54,8 +59,16 @@ class Coin extends React.Component {
         console.error(err);
       }
     };
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+    
+        if (name === 'thoughtText' && value.length <= 280) {
+          setThoughtText(value);
+          setCharacterCount(value.length);
+        }
+      };
 
-  render() {
     return (
       <div className="Coin">
         <div id="coin" className={this.state.result}>
@@ -70,7 +83,34 @@ class Coin extends React.Component {
           Be the (Small) Change You
           <br /> Want to See in the World
         </h1>
-        <input />
+        {/* Auth.loggedIn() ? ( */}
+            <form className='' onSubmit={handleFormSubmit}>
+              
+              {/* input div */}
+              <div className=''>
+                <textarea
+                    name='goodDeedText'
+                    placeholder="What good deed did you accomplish today?"
+                    value={goodDeedText}
+                    className=''
+                    onChange={handleChange}
+                    ></textarea>
+                </div> 
+
+                {/* button div */}
+                <div className="">
+                <button className="" type="submit">
+                Flip Coin
+                </button>
+                </div>
+
+            </form>
+        {/*  ) : (
+             <p>
+               You need to be logged in to share your good deed for the day. Please{' '}
+               <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+             </p>
+           ) */}
         <br />
         <br />
         <button id="btn " onClick={this.coinFlip}>
@@ -78,7 +118,8 @@ class Coin extends React.Component {
         </button>
       </div>
     );
-  }
+  
 }
-
+}
 export default Coin;
+
