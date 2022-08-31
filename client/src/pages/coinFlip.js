@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_GOOD_DEED } from '../utils/mutations';
 import {QUERY_GOOD_DEEDS, QUERY_ME} from '../utils/queries';
 
-import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 class Coin extends React.Component {
   constructor(props) {
@@ -85,7 +85,7 @@ class Coin extends React.Component {
                     placeholder="What good deed did you accomplish today?"
                     value={goodDeedText}
                     className=''
-                    onChange={handleChange}
+                    // onChange=
                     ></textarea>
                 </div> 
 
