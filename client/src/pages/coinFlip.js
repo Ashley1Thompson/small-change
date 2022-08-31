@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_GOODDEED } from '../utils/mutations';
-import {QUERY_GOODDEEDS, QUERY_ME} from '../utils/queries';
+import { ADD_GOOD_DEED } from '../utils/mutations';
+import {QUERY_GOOD_DEEDS, QUERY_ME} from '../utils/queries';
 
 import penny from '../assets/2022-lincoln-penny-uncirculated-obverse-philadelphia-300x300.jpeg';
 
@@ -12,14 +12,14 @@ const CoinFlip = () => {
 const [goodDeedText, setGoodDeedText] = useState('');
 const [characterCount, setCharacterCount] = useState(0);
 
-const [addGoodDeed, { error }] = useMutation(ADD_GOODDEED, {
+const [addGoodDeed, { error }] = useMutation(ADD_GOOD_DEED, {
     // update goodDeed cahce
     update(cache, { data: { addGoodDeed }}) {
         try {
-            const { goodDeeds } = cache.readQuery({ query: QUERY_GOODDEEDS});
+            const { goodDeeds } = cache.readQuery({ query: QUERY_GOOD_DEEDS});
 
             cache.writeQuery({
-                query: QUERY_GOODDEEDS,
+                query: QUERY_GOOD_DEEDS,
                 data: { goodDeeds: [addGoodDeed, ...goodDeeds] },
             });
         }catch (e) {
