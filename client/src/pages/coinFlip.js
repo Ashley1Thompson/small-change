@@ -5,69 +5,77 @@ import { useMutation } from '@apollo/client';
 import { ADD_GOOD_DEED } from '../utils/mutations';
 import {QUERY_GOOD_DEEDS, QUERY_ME} from '../utils/queries';
 
-import penny from '../assets/2022-lincoln-penny-uncirculated-obverse-philadelphia-300x300.jpeg';
+import Auth from '../../utils/auth';
 
-const CoinFlip = () => {
+class Coin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: "doing",
+    };
+    this.coinFlip = this.coinFlip.bind(this);
+  }
 
-const [goodDeedText, setGoodDeedText] = useState('');
-const [characterCount, setCharacterCount] = useState(0);
-
-const [addGoodDeed, { error }] = useMutation(ADD_GOOD_DEED, {
-    // update goodDeed cahce
-    update(cache, { data: { addGoodDeed }}) {
+  coinFlip() {
+    this.setState({}, () => {
+      this.setState({ result: "done" });
+      console.log("done");
+    });
+    const [goodDeedText, setGoodDeedText] = useState("");
+    const [addGoodDeed, { error }] = useMutation(ADD_GOOD_DEED, {
+      update(cache, { data: { addGoodDeed } }) {
         try {
-            const { goodDeeds } = cache.readQuery({ query: QUERY_GOOD_DEEDS});
+          const { goodDeeds } = cache.readQuery({ query: QUERY_GOOD_DEEDS });
 
-            cache.writeQuery({
-                query: QUERY_GOOD_DEEDS,
-                data: { goodDeeds: [addGoodDeed, ...goodDeeds] },
-            });
-        }catch (e) {
-            console.error(e);
+          cache.writeQuery({
+            query: QUERY_GOOD_DEEDS,
+            data: { goodDeeds: [addGoodDeed, ...goodDeeds] },
+          });
+        } catch (e) {
+          console.error(e);
         }
 
-        // update me object's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
         cache.writeQuery({
-            query: QUERY_ME,
-            data: { me: { ...me, goodDeeds: [...me.goodDeeds, addGoodDeed]}},
+          query: QUERY_ME,
+          data: { me: { ...me, goodDeeds: [...me.goodDeeds, addGoodDeed] } },
         });
-    },
-});
+      },
+    });
 
-const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
 
-    try {
-        const { data } = await addGoodDeed({
-            variables: {
-                goodDeedText,
-                goodDeedAuthor: Auth.getProfile().data.username
-            }
+      try {
+        const { data} = await addGoodDeed({
+          variables: {
+            goodDeedText,
+            gooddeedAuthor: Auth.getProfile().data.username,
+          }
         });
 
         setGoodDeedText('');
-    }   catch (err) {
+      } catch (err) {
         console.error(err);
-    }
-};
+      }
+    };
 
-const handleChange = (event) => {
-    const { name, value } = event.target;
 
-    if (name === 'goodDeedText' && value.length <= 280) {
-        setGoodDeedText(value);
-        setCharacterCount(value.length);
-    }
-};
-
-return (
-
-<div>
-    {/* placeholder image for coin flip animation */}
-    <img className='' src={penny} alt='enlarged penny' />
-    {
-        // Auth.loggedIn() ? (
+    return (
+      <div className="Coin">
+        <div id="coin" className={this.state.result}>
+          <div class="side-a">
+            <h2>Deed Done.</h2>
+          </div>
+          <div className="side-b">
+            <h2>Deed Needs Doin'</h2>
+          </div>
+        </div>
+        <h1>
+          Be the (Small) Change You
+          <br /> Want to See in the World
+        </h1>
+        {/* Auth.loggedIn() ? ( */}
             <form className='' onSubmit={handleFormSubmit}>
               
               {/* input div */}
@@ -89,16 +97,21 @@ return (
                 </div>
 
             </form>
-        // ) : (
-        //     <p>
-        //       You need to be logged in to share your good deed for the day. Please{' '}
-        //       <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        //     </p>
-        //   )
-    }
-</div>
+        {/*  ) : (
+             <p>
+               You need to be logged in to share your good deed for the day. Please{' '}
+               <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+             </p>
+           ) */}
+        <br />
+        <br />
+        <button id="btn " onClick={this.coinFlip}>
+          Log Your Good Deed for the Day
+        </button>
+      </div>
+    );
+  
+}
+}
+export default Coin;
 
-);
-};
-
-export default CoinFlip;
