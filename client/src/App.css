@@ -125,10 +125,10 @@
 
 /* header styling */
 
-.header-component{
-  display:flex;
-  justify-content:space-between;
-  flex-direction: row; 
+.header-component {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   /* width: 100%;
 }
 
@@ -138,23 +138,31 @@
   /* margin-right: 100%; */
 }
 
-.username-logout{
-  display:flex;
+.username-logout {
+  display: flex;
   justify-content: end;
   flex-direction: column;
   text-align: end;
-  
 }
 
-.login-card{
-  display:flex;
+.login-card {
+  display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.login-form{
+.login-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 80%;
+}
+
+Nav {
+  background-color: #2a9d8f;
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff;
 }
