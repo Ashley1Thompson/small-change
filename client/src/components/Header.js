@@ -10,9 +10,12 @@ const Header = () => {
     };
 
     return (
-        <header className=''>
-            <h1 className=''>SMALL CHANGE</h1>
-            <div>
+        <header className='header-component'>
+            {/* <div className=''> */}
+                <h1 className='.header-title'>SMALL CHANGE</h1>
+            {/* </div> */}
+            
+            <div className='username-logout'>
                 {Auth.loggedIn() ? (
                     <>
                     <h2>{Auth.getProfile().data.username}</h2>

@@ -45,6 +45,7 @@ const Login = (props) => {
           <div className="card-body">
             {/* code that delivers message to user if they are loggged in and find themselves on the login page */}
             {data ? (
+            
               <p>
                 Login successful, proceed to {""}
                 <Link to="/">the homepage.</Link>

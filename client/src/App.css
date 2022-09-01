@@ -122,3 +122,23 @@
     transform: rotate(360deg);
   }
 }
+
+/* header styling */
+
+.header-component{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.header-title{
+  
+}
+
+.username-logout{
+  display:flex;
+  justify-content: end;
+  flex-direction: column;
+  text-align: end;
+  
+}
