@@ -1,13 +1,13 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import DeedForm from "../components/DeedForm";
 
-// import { Link } from "react-router-dom";
 // import { useMutation } from "@apollo/client";
 
 // import { ADD_GOOD_DEED } from "../utils/mutations";
 // import { QUERY_GOOD_DEEDS, QUERY_ME } from "../utils/queries";
 
-// import Auth from "../utils/auth";
+import Auth from "../utils/auth";
 
 class CoinFlip extends React.Component {
   constructor(props) {
@@ -28,6 +28,9 @@ class CoinFlip extends React.Component {
   }
 
   render() {
+    if (!Auth.loggedIn()) {
+      return <Navigate replace to="/" />;
+    } else {
     return (
       <div className="App">
         <div id="coin" className={this.state.result} key={+new Date()}>
@@ -49,6 +52,7 @@ class CoinFlip extends React.Component {
       </div>
     );
   }
+}
 }
 
 export default CoinFlip;

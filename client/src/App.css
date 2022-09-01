@@ -127,12 +127,15 @@
 
 .header-component{
   display:flex;
-  flex-direction: row;
-  width: 100%;
+  justify-content:space-between;
+  flex-direction: row; 
+  /* width: 100%;
 }
 
 .header-title{
-  
+  /* display:flex; */
+  /* justify-content:left; */
+  /* margin-right: 100%; */
 }
 
 .username-logout{
@@ -141,4 +144,17 @@
   flex-direction: column;
   text-align: end;
   
+}
+
+.login-card{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
 }

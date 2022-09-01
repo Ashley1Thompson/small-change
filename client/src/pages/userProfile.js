@@ -2,12 +2,17 @@ import '../App.css';
 import { useQuery } from "@apollo/client";
 import { QUERY_GOOD_DEEDS } from '../utils/queries';
 import React, { div } from 'react';
+import { Navigate } from "react-router-dom";
+import Auth from '../utils/auth'
+
 
 const UserProfile = () => {
   const { loading, data } = useQuery(QUERY_GOOD_DEEDS);
   const goodDeeds = data?.goodDeeds || [];
   
-  
+  if (!Auth.loggedIn()) {
+    return <Navigate replace to="/" />;
+  } else {
   return (
     <section>
       <div className="flex-row justify-center">
@@ -30,6 +35,7 @@ const UserProfile = () => {
       </div>    
     </section>
   ); 
+};
 };
 
 export default UserProfile;
