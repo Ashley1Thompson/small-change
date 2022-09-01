@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 
@@ -8,7 +8,7 @@ import Auth from "../utils/auth";
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
-  const navigate = useNavigate();
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -42,6 +42,9 @@ const Login = (props) => {
     // }
   };
 
+  if (Auth.loggedIn()) {
+    return <Navigate replace to="/coinflip" />;
+  } else {
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
@@ -99,6 +102,7 @@ const Login = (props) => {
     </main>
   );
 
+};
 };
 
 export default Login;
