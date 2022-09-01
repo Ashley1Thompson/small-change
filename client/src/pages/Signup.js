@@ -50,7 +50,7 @@ const Signup = () => {
                     <Link to='/coinflip'> here to log your good deed for the day.</Link>
                 </p>
             ) : (
-                <form onSubmit={handleFormSubmit}>
+                <form className='login-form' onSubmit={handleFormSubmit}>
                     <input
                         className='form-input'
                         placeholder='Username'
@@ -80,8 +80,14 @@ const Signup = () => {
                         style={{ cursor: 'pointer' }}
                         type='submit'
                     >Submit</button>
-                </form>
+                </form>  
             )}
+            <div>
+            <p>
+                Already signed up? {""}
+                <Link to="/">click here!</Link>
+              </p>
+            </div>
             </div>
         </div>
       </div>  
