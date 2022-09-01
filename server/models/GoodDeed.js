@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const goodDeedSchema = new Schema({
     goodDeedText: {
@@ -15,7 +16,8 @@ const goodDeedSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
     },
 });
 
