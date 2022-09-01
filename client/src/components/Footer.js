@@ -7,10 +7,10 @@ const Footer = () => {
         <Container>
           <Navbar.Collapse className="justify-content-middle">
             <Nav className="ml-auto">
-              <NavLink to="/coinFlip" className="nav-link">
+              <NavLink to="/coinflip" className="nav-link">
                 Today
               </NavLink>
-              <NavLink to="/UserProfile" className="nav-link">
+              <NavLink to="/userProfile" className="nav-link">
                 About Me
               </NavLink>
               <NavLink to="/inspiration" className="nav-link">

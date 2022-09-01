@@ -1,27 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const goodDeeds = (
- props
-) => {
+const GoodDeeds = ({
+ goodDeeds,
+ title,
+ showTitle = true,
+ showUsername = true,
+}) => {
   // if (!goodDeeds.length) {
   //   return <h3>No Good Deeds Yet</h3>;
   // }
-console.log(props)
+// console.log(props)
   return (
     <div>
-      {/* {showText && <h3>{goodDeedtext}</h3>}
+      
       {goodDeeds &&
         goodDeeds.map((goodDeed) => (
           <div key={goodDeed._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {showUsername ? (
-                <div>
-                  You did this goodDeed on {goodDeed.createdAt}
-                </div>
+                 <Link
+                 className="text-light"
+                 to={`/userProfile`}
+               >
+                 {goodDeed.goodDeedAuthor} <br />
+                 <span style={{ fontSize: '1rem' }}>
+                   had this thought on {goodDeed.createdAt}
+                 </span>
+               </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this goodDeed on {goodDeed.createdAt}
+                    You had shared this good deed on {goodDeed.createdAt}
                   </span>
                 </>
               )}
@@ -30,13 +40,13 @@ console.log(props)
               <p>{goodDeed.goodDeedText}</p>
             </div>
           </div>
-        ))} */}
-        <h1>
+        ))}
+        {/* <h1>
           {props.goodDeed.goodDeedText}
           {props.goodDeed.goodDeedAuthor}
-        </h1>
+        </h1> */}
     </div>
   );
 };
 
-export default goodDeeds;
+export default GoodDeeds;
