@@ -12,11 +12,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CoinFlip from './pages/CoinFlip';
 // import Inspiration from './pages/Inspiration';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import UserProfile from './pages/UserProfile';
 import Header from './components/Header'
 import Footer from './components/Footer';
 
 //import styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 
 // Construct our main GraphQL API endpoint
@@ -48,7 +51,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="">
-          {/* <Header /> */}
+          <Header />
           <div className="">
             <Routes>
               <Route
@@ -56,9 +59,13 @@ function App() {
                 element={<Login />}
               />
               <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              {/* <Route
                 path="/coinflip"
                 element={<CoinFlip />}
-              />  
+              />   */}
               <Route
                 path="/profile"
                 element={<UserProfile />}
