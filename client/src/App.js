@@ -14,6 +14,7 @@ import CoinFlip from "./pages/CoinFlip";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import UserProfile from "./pages/UserProfile";
+import Inspiration from "./pages/Inspiration";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -58,9 +59,10 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/coinflip" element={<CoinFlip />} />
               <Route path="/userProfile" element={<UserProfile />} />
+              <Route path="/inspiration" element={<Inspiration />} />
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
