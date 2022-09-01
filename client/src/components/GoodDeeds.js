@@ -7,10 +7,7 @@ const GoodDeeds = ({
  showTitle = true,
  showUsername = true,
 }) => {
-  // if (!goodDeeds.length) {
-  //   return <h3>No Good Deeds Yet</h3>;
-  // }
-// console.log(props)
+
   return (
     <div>
       
@@ -31,7 +28,7 @@ const GoodDeeds = ({
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had shared this good deed on {goodDeed.createdAt}
+                    You shared this good deed on {goodDeed.createdAt}
                   </span>
                 </>
               )}
@@ -41,10 +38,7 @@ const GoodDeeds = ({
             </div>
           </div>
         ))}
-        {/* <h1>
-          {props.goodDeed.goodDeedText}
-          {props.goodDeed.goodDeedAuthor}
-        </h1> */}
+        
     </div>
   );
 };
