@@ -127,17 +127,19 @@
 
 .header-component{
   display:flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: row; 
+  /* width: 100%;
 }
 
 .header-title{
-  
+  /* display:flex; */
+  /* justify-content:left; */
+  /* margin-right: 100%; */
 }
 
 .username-logout{
   display:flex;
-  justify-content: end;
+  justify-content: right;
   flex-direction: column;
   text-align: end;
   
