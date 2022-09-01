@@ -127,6 +127,7 @@
 
 .header-component{
   display:flex;
+  justify-content:space-between;
   flex-direction: row; 
   /* width: 100%;
 }
@@ -139,8 +140,21 @@
 
 .username-logout{
   display:flex;
-  justify-content: right;
+  justify-content: end;
   flex-direction: column;
   text-align: end;
   
+}
+
+.login-card{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
 }

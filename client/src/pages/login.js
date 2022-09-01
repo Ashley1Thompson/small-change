@@ -46,10 +46,10 @@ const Login = (props) => {
     return <Navigate replace to="/coinflip" />;
   } else {
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
+    <main className=" mb-4">
+      <div className=" col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <h4 className="card-header">Login</h4>
           <div className="card-body">
             {/* code that delivers message to user if they are loggged in and find themselves on the login page */}
             {data ? (
@@ -60,7 +60,7 @@ const Login = (props) => {
               </p>
             ) : (
               // login form
-              <form onSubmit={handleFormSubmit}>
+              <form className='login-form' onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Username"
