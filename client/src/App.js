@@ -67,7 +67,7 @@ function App() {
                 element={<CoinFlip />}
               />   */}
               <Route
-                path="/profile"
+                path="/userProfile"
                 element={<UserProfile />}
               />
             </Routes>

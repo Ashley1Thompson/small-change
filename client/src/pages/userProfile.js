@@ -1,7 +1,7 @@
 import '../App.css';
 import { useQuery } from "@apollo/client";
 import { QUERY_GOOD_DEEDS } from '../utils/queries';
-import React, { Component } from 'react';
+import React, { div } from 'react';
 
 const UserProfile = () => {
   const { loading, data } = useQuery(QUERY_GOOD_DEEDS);
@@ -9,7 +9,7 @@ const UserProfile = () => {
   
   
   return (
-    <>
+    <section>
       <div className="flex-row justify-center">
         <div
           className="col-12 col-md-10 mb-3 p-3"
@@ -21,14 +21,14 @@ const UserProfile = () => {
           {loading ? (
             <div>Loading Good Deeds...</div>
           ) : (
-            <Component
+            <div
               goodDeeds={goodDeeds}
               title="It feels good to do good."
-            />
+            ></div>
           )}
         </div>
       </div>    
-    </>
+    </section>
   ); 
 };
 
