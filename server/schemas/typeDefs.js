@@ -23,7 +23,7 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
-    goodDeeds(username: String): [GoodDeed]
+    goodDeeds: [GoodDeed]
     me: User
   }
 

@@ -13,7 +13,7 @@ const resolvers = {
         },
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.finOne({ _id: context.user._id }).populate('goodDeeds');
+                return User.findOne({ _id: context.user._id }).populate('goodDeeds');
             }
             throw new AuthenticationError('You need to be logged in to do that!');
         }
