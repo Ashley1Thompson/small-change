@@ -60,7 +60,7 @@ function App() {
               <Route path="/userProfile" element={<UserProfile />} />
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
