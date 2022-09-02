@@ -1,9 +1,8 @@
-import '../App.css';
+import "../App.css";
 import { useQuery } from "@apollo/client";
-import { QUERY_GOOD_DEEDS, QUERY_ME } from '../utils/queries';
-import React from 'react';
-import GoodDeeds from '../components/GoodDeeds';
-
+import { QUERY_GOOD_DEEDS, QUERY_ME } from "../utils/queries";
+import React from "react";
+import GoodDeeds from "../components/GoodDeeds";
 
 const UserProfile = () => {
   const { loading, data } = useQuery(QUERY_GOOD_DEEDS);
@@ -13,9 +12,9 @@ const UserProfile = () => {
   const user = userData?.me || userData?.user || {};
   const filterDeeds = goodDeeds.filter((goodDeed) => {
     // goodDeed.goodDeedAuthor === user.username
-  })
-  console.log(goodDeeds)
-  console.log(userData)
+  });
+  console.log(goodDeeds);
+  console.log(userData);
   return (
     <section>
       <div className="flex-row justify-center">
@@ -24,15 +23,13 @@ const UserProfile = () => {
             <div>Loading Good Deeds...</div>
           ) : (
             goodDeeds.map((goodDeed) => {
-              return(<GoodDeeds goodDeed={goodDeed} />)
+              return <GoodDeeds goodDeed={goodDeed} />;
             })
           )}
         </div>
-        
-      </div>    
+      </div>
     </section>
-  ); 
-};
+  );
 };
 
 export default UserProfile;
