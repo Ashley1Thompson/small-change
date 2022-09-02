@@ -26,12 +26,17 @@ Small Change is an app to encourage and inspire people to bring more kindness in
 Future development will inlcude a nastive mobile app, customizable coins, and interactions on the Inspirations page.
 
 ## Functionality
-The following screenshots demonstarte the app's functionality
+The following screenshots demonstrate the app's functionality
 
+Login In or Sign Up
 ![Login](assets/loginsmallchange.png)
+Coin Flip - No Deed Yet
 ![Coin Flip Not Done](assets/deedneedsdoin.png)
+Coin Flip - Deed Complete!
 ![Coin Flip Done](assets/coinflip.png)
+User Profile Page
 ![User Profile](assets/userprofilesmallchange.png)
+Inspirations Page
 ![Inspirations](assets/inspirations.png)
 
 ## Tech
