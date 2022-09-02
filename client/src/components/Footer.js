@@ -9,7 +9,7 @@ const Footer = () => {
             <NavLink to="/coinFlip" className="nav-link">
               Today
             </NavLink>
-            <NavLink to="/UserProfile" className="nav-link">
+            <NavLink to="/userProfile" className="nav-link">
               Profile
             </NavLink>
             <NavLink to="/inspiration" className="nav-link">
