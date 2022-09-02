@@ -56,7 +56,12 @@ const DeedForm = () => {
       }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
+      const { me } = cache.readQuery({ 
+        query: QUERY_ME,
+        // variables: {
+        //   ...this.variables,
+        // }
+      });
       cache.writeQuery({
         query: QUERY_ME,
         data: { me: { ...me, goodDeeds: [...me.goodDeeds, addGoodDeed] } },
@@ -133,17 +138,17 @@ const DeedForm = () => {
                   Log Your Deed
                 </button>
               </div>
-              {error && (
+              {/* {error && (
                 <div className="col-12 my-3 bg-danger text-white p-3">
                   {error.message}
                 </div>
-              )}
+              )} */}
             </form>
           </div>
         </>
       ) : (
         <p>
-          You will need to log in above. <Link to="/login">login</Link> or{" "}
+          You will need to log in above. <Link to="/">login</Link> or{" "}
           <Link to="/signup">signup.</Link>
         </p>
       )}

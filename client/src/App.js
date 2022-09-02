@@ -59,6 +59,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/coinflip" element={<CoinFlip />} />
               <Route path="/userProfile" element={<UserProfile />} />
+              <Route path="/userProfile/:username" element={<UserProfile />} />
               <Route path="/inspiration" element={<Inspiration />} />
             </Routes>
           </div>

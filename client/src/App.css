@@ -211,6 +211,10 @@ a.nav-link {
   padding: 2px;
 }
 
+.profile-card{
+  background: 'E9C46A';
+}
+
 @media (max-width: 600px) {
   a.nav-link {
     font-weight: 300;

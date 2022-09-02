@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const GoodDeeds = ({
  goodDeeds,
- title,
- showTitle = true,
  showUsername = true,
 }) => {
 
@@ -13,18 +11,20 @@ const GoodDeeds = ({
       
       {goodDeeds &&
         goodDeeds.map((goodDeed) => (
-          <div key={goodDeed._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+          <div key={goodDeed._id} className="card mb-3 ">
+            <h4 className="card-header p-2 m-0 profile-card">
               {showUsername ? (
-                 <Link
-                 className="text-light"
-                 to={`/userProfile`}
-               >
+                <div >
+                  {/* <Link 
+                  className="text-light"
+                  to={`/userProfile/${goodDeed.goodDeedAuthor}`}
+                > */}
                  {goodDeed.goodDeedAuthor} <br />
                  <span style={{ fontSize: '1rem' }}>
-                   had this thought on {goodDeed.createdAt}
+                 shared this good deed on {goodDeed.createdAt}
                  </span>
-               </Link>
+                 </div>
+              //  </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
