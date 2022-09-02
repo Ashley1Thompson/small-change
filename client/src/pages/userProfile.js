@@ -1,4 +1,4 @@
-import '../App.css';
+import "../App.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import React from 'react';
@@ -9,6 +9,7 @@ import Auth from '../utils/auth';
 
 const UserProfile = () => {
   const {username: userParam } = useParams();
+
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
