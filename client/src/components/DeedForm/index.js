@@ -10,9 +10,9 @@ const placeholderText = [
   "I helped an elderly person safely cross the road",
   "I grabbed something off the top of a shelf for someone at the grocery store",
   "I paid for someone's meal when I was downtown earlier today",
-  "I let a joro spider live when I really wanted to stomp it... I found it crawling arounf in my basement o_o",
+  "I let a joro spider live when I really wanted to stomp it... I found it crawling around in my basement o_o",
   "I helped a fellow classmate with their homework",
-  "Volunteered at the zoo",
+  "Volunteered at the zoo :)",
   "Planted a tree!",
   "Helped my grandparents with their internet router",
 ];
@@ -97,7 +97,12 @@ const DeedForm = () => {
 
   return (
     <div>
-      <h3>Inspire Others</h3>
+      <br />
+      <h3>
+        If you'd like, you can log your
+        <br />
+        deed here to inspire others ...
+      </h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -108,36 +113,42 @@ const DeedForm = () => {
           >
             Character Count: {characterCount}/280
           </p>
-          <form
-            className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={handleFormSubmit}
-          >
-            <div className="col-12 col-lg-9">
-              <textarea
-                name="goodDeedText"
-                placeholder={placeholderText[index]}
-                value={goodDeedText}
-                className="form-input w-100"
-                style={{ lineHeight: "1.5", resize: "vertical" }}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Log Your Deed
-              </button>
-            </div>
-            {/* {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
-                {error.message}
+          <div>
+            <form
+              className="justify-content-center"
+              onSubmit={handleFormSubmit}
+            >
+              <div className="col-12">
+                <textarea
+                  name="goodDeedText"
+                  placeholder={placeholderText[index]}
+                  value={goodDeedText}
+                  className="form-input w-100"
+                  style={{ lineHeight: "1.5", resize: "vertical" }}
+                  onChange={handleChange}
+                ></textarea>
               </div>
-            )} */}
-          </form>
+
+              <div className="col-12">
+                <button
+                  className="btn btn-primary btn-block py-3"
+                  id="btn"
+                  type="submit"
+                >
+                  Log Your Deed
+                </button>
+              </div>
+              {/* {error && (
+                <div className="col-12 my-3 bg-danger text-white p-3">
+                  {error.message}
+                </div>
+              )} */}
+            </form>
+          </div>
         </>
       ) : (
         <p>
-          You will need to log in above. <Link to="/login">login</Link> or{" "}
+          You will need to log in above. <Link to="/">login</Link> or{" "}
           <Link to="/signup">signup.</Link>
         </p>
       )}

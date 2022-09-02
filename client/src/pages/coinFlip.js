@@ -31,28 +31,46 @@ class CoinFlip extends React.Component {
     if (!Auth.loggedIn()) {
       return <Navigate replace to="/" />;
     } else {
-    return (
-      <div className="App">
-        <div id="coin" className={this.state.result} key={+new Date()}>
-          <div class="side-a">
-            <h2>Deed Done.</h2>
+      return (
+        <div className="App">
+          <div id="coin" className={this.state.result} key={+new Date()}>
+            <div class="side-a">
+              <h2>
+                Deed
+                <br />
+                Is
+                <br /> Done.
+              </h2>
+            </div>
+            <div className="side-b">
+              <h2>
+                Deed
+                <br />
+                Needs
+                <br /> Doin'
+              </h2>
+            </div>
           </div>
-          <div className="side-b">
-            <h2>Deed Needs Doin'</h2>
-          </div>
+          <h3>
+            Once you've done your good deed for the day,
+            <br /> click the button below to flip your coin!
+          </h3>
+          <button
+            id="btn"
+            className="
+            btn
+            btn-primary
+            btn-block
+            py-3"
+            onClick={this.coinToss}
+          >
+            Flip the Coin!
+          </button>
+          <DeedForm />
         </div>
-        <h1>
-          Be the (Small) Change You
-          <br /> Want to See in the World
-        </h1>
-        <button id="btn" onClick={this.coinToss}>
-          Log Your Good Deed for the Day
-        </button>
-        <DeedForm />
-      </div>
-    );
+      );
+    }
   }
-}
 }
 
 export default CoinFlip;
