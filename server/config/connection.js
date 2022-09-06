@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/small-change', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/smallChanges', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
