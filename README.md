@@ -9,12 +9,13 @@ Small Change is an app to encourage and inspire people to bring more kindness in
 
 ## Table of Contents
 1. [Features](#Features)
-2. [Functionality](#Functionality)
-3. [Tech](#Tech)
-4. [Installation](#Installation)
-5. [License](#License)
-6. [Contributors](#Contributors)
-7. [Contact](#Contact)
+2. [How to Use](#HowtoUse)
+3. [Functionality](#Functionality)
+4. [Tech](#Tech)
+5. [Installation](#Installation)
+6. [License](#License)
+7. [Contributors](#Contributors)
+8. [Contact](#Contact)
 
 ## Features
 
@@ -22,8 +23,15 @@ Small Change is an app to encourage and inspire people to bring more kindness in
 - Flip your coin to mark your Good Deed.
 - Ispire others by logging your Good Deed, which will be displayed publicly on the Inspirations page.
 
-
 Future development will inlcude a nastive mobile app, customizable coins, and interactions on the Inspirations page.
+
+## How to Use
+1. Open webapp at ([link to deployed app on Heroku](https://smallchange-app.herokuapp.com/))
+2. Login or sign up using email, a unique username, and a password of at least 8 characters.  
+3. Flip the coin once you have completed your good deed for the day.
+4. Log your good deed to share with others.
+5. Click the "Profile" link on the nav bar located at the bottom of the screen to the good deeds you have logged.
+6. Click the "Inspiration" link on the nav bar located at the bottom of the screen to the good deeds other users have logged. 
 
 ## Functionality
 The following screenshots demonstrate the app's functionality
