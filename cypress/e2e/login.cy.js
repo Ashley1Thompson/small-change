@@ -1,3 +1,9 @@
+//first attempt at testing login by involving the server
+// going to table this for now and simply log in with the UI
+// see utils/login
+
+let user
+
 describe('The Login Page', () => {
     beforeEach(() => {
         // reset and seed the database prior to every test
@@ -5,9 +11,16 @@ describe('The Login Page', () => {
 
         // seed a user in the DB that we can control from our tests
         // assuming it generates a random password for us
-        cy.request('POST', '/test/seed/user', { username: 'canslercp'})
-          .its('body')
-          .as('currentUser')
+        cy.request('POST', '', { 
+            username: 'canslercp',
+            password: 'coffeesogood123'
+        })
+        .its('body')
+        .then((res) => {
+          user = res
+        })
+      
+      
     })
 
     it('sets auth cookie when logging in via form submission', function () {

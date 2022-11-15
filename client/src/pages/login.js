@@ -68,6 +68,7 @@ const Login = (props) => {
                   type="username"
                   value={formState.username}
                   onChange={handleChange}
+                  data-cy="username"
                 />
                 <input
                   className="form-input"
@@ -76,8 +77,13 @@ const Login = (props) => {
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
+                  data-cy="password"
                 />
-                <button className="btn btn-block btn-primary" type="submit">
+                <button 
+                  className="btn btn-block btn-primary" 
+                  type="submit"
+                  data-cy="button"
+                  >
                   Submit
                 </button>
               </form>
