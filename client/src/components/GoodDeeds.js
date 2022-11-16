@@ -34,7 +34,7 @@ const GoodDeeds = ({
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{goodDeed.goodDeedText}</p>
+              <p  data-cy="good-deeds">{goodDeed.goodDeedText}</p>
             </div>
           </div>
         ))}

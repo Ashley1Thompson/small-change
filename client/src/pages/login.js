@@ -82,7 +82,7 @@ const Login = (props) => {
                 <button 
                   className="btn btn-block btn-primary" 
                   type="submit"
-                  data-cy="button"
+                  data-cy="submit-button"
                   >
                   Submit
                 </button>

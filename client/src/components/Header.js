@@ -19,7 +19,7 @@ const Header = () => {
         {Auth.loggedIn() ? (
           <>
             <h2>{Auth.getProfile().data.username}</h2>
-            <button className="" onClick={logout}>
+            <button className="" onClick={logout} data-cy="logout-button">
               Logout
             </button>
           </>

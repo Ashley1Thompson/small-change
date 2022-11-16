@@ -9,10 +9,10 @@ const Footer = () => {
             <NavLink to="/coinFlip" className="nav-link">
               Today
             </NavLink>
-            <NavLink to="/userProfile" className="nav-link">
+            <NavLink to="/userProfile" className="nav-link" data-cy="profile-button">
               Profile
             </NavLink>
-            <NavLink to="/inspiration" className="nav-link">
+            <NavLink to="/inspiration" className="nav-link" data-cy="inspiration-button">
               Inspiration
             </NavLink>
           </Nav>

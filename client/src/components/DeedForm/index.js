@@ -126,6 +126,7 @@ const DeedForm = () => {
                   className="form-input w-100"
                   style={{ lineHeight: "1.5", resize: "vertical" }}
                   onChange={handleChange}
+                  data-cy="good-deed"
                 ></textarea>
               </div>
 
@@ -134,6 +135,7 @@ const DeedForm = () => {
                   className="btn btn-primary btn-block py-3"
                   id="btn"
                   type="submit"
+                  data-cy="form-submit"
                 >
                   Log Your Deed
                 </button>

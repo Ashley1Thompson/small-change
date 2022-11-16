@@ -63,6 +63,7 @@ class CoinFlip extends React.Component {
             btn-block
             py-3"
             onClick={this.coinToss}
+            data-cy="coin-flip"
           >
             Flip the Coin!
           </button>
