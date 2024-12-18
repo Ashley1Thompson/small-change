@@ -1,3 +1,4 @@
+## DEPLOYMENT NOTE: Small Change is no longer deployed due to Heroku deprecating their free tier.
 # Small Change
 ## It feels good to do good
 
